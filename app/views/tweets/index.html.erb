@@ -7,15 +7,15 @@
   <%= submit_tag('Buscar') %>
 <% end %>
 
-
+<br>
 <div id="tweets">
   <% @tweets.each do |tweet| %>
     <div class="card">
       <div class="card-body">
         <h5 class="card-title"><%= tweet.userName %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= tweet.description %></h6>
-        <a href="#" class="card-link"><%= link_to "Show this tweet", tweet %></a>
-        <a href="#" class="card-link"><%= link_to "New tweet", new_tweet_path %></a>
+        <button type="button" class="btn btn-info"><%= link_to "Show this tweet", tweet %></button>
+        <button type="button" class="btn btn-info"><%= link_to "New tweet", tweet %></button>
       </div>
     </div>
     <br>
