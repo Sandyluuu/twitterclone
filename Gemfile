@@ -76,3 +76,5 @@ end
 gem "faker"
 
 gem "pagy"
+
+gem 'will_paginate'

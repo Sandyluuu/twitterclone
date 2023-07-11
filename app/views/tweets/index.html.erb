@@ -8,22 +8,22 @@
       <div class="card-body">
         <h5 class="card-title"><%= tweet.userName %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= tweet.description %></h6>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+        <a href="#" class="card-link"><%= link_to "Show this tweet", tweet %></a>
+        <a href="#" class="card-link"><%= link_to "New tweet", new_tweet_path %></a>
       </div>
     </div>
     <br>
   <% end %>
 
-  <%= pagy_nav(@pagy) if @pagy.pages > 1 %>
+  <%= will_paginate @tweets %>
 
-  <% @tweets.each do |tweet| %> 
-    <%= render tweet %>
-    <p>
+  <%# <% @tweets.each do |tweet| %>
+    <%# <%= render tweet %>
+    <%# <p>
       <%= link_to "Show this tweet", tweet %>
-    </p>
+    <%# </p>
   <% end %>
-</div>
+<%# </div>
 
-<%= link_to "New tweet", new_tweet_path %>
+<%= link_to "New tweet", new_tweet_path %> 
 

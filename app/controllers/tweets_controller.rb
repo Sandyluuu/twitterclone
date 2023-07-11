@@ -3,10 +3,8 @@ class TweetsController < ApplicationController
 
   # GET /tweets or /tweets.json
   def index
-    @tweets = Tweet.all
-    # @tweets = Tweet.all
-    @pagy, @tweets = pagy(Tweet.all, items: 10)
-  end
+    @tweets = Tweet.paginate(page: params[:page], per_page: 10)
+  end  
 
   # GET /tweets/1 or /tweets/1.json
   def show
