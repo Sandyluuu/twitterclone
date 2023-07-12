@@ -58,6 +58,11 @@ class TweetsController < ApplicationController
     end
   end
 
+  def search
+    @query = params[:query]
+    @tweets = Tweet.where("description LIKE ?", "%#{params[:query]}%")
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tweet
@@ -70,6 +75,4 @@ class TweetsController < ApplicationController
     end
 end
 
-def search
-  @tweets = Tweet.where("content LIKE ?", "%#{params[:query]}%")
-end
+

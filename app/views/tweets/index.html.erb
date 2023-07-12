@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Tweets</h1>
-
+ 
 <%= form_tag(search_tweets_path, method: 'get') do %>
   <%= text_field_tag(:query, params[:query], placeholder: 'Buscar tweets...') %>
   <%= submit_tag('Buscar') %>
@@ -15,7 +15,7 @@
         <h5 class="card-title"><%= tweet.userName %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= tweet.description %></h6>
         <button type="button" class="btn btn-info"><%= link_to "Show this tweet", tweet %></button>
-        <button type="button" class="btn btn-info"><%= link_to "New tweet", tweet %></button>
+        <button type="button" class="btn btn-info"><%= link_to "New tweet", new_tweet_path %></button>
       </div>
     </div>
     <br>

@@ -8,9 +8,10 @@
 
 puts "Creating tweets..."
 
-200.times do
+50.times do
   Tweet.create(
-    description: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4),
+    description: Faker::Lorem.paragraph(sentence_count: 1, supplemental: false, random_sentences_to_add: 2),
     userName: Faker::Name.name,
+    text: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 4),
   )
 end
